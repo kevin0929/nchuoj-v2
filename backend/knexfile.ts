@@ -1,11 +1,10 @@
 import type { Knex } from 'knex';
 import * as dotenv from 'dotenv';
 
-
 // Load environment variables from .env file
 dotenv.config({ path: '../.env' });
 
-module.exports = {
+const config: Knex.Config = {
     client: process.env.MYSQL_CLIENT || 'mysql2',
     connection: {
         host: process.env.MYSQL_HOST || 'localhost',
@@ -19,4 +18,6 @@ module.exports = {
         tableName: 'knex_migrations',
         extension: 'ts',
     }
-} as Knex.Config;
+}
+
+export default config;
