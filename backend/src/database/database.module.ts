@@ -1,9 +1,10 @@
-import { Module } from '@nestjs/common';
+import { Module, Global } from '@nestjs/common';
 import knex, { Knex } from 'knex';
-import knexConfig from '../../knexfile';
+import knexConfig from '../knexfile';
 
 export const KNEX = Symbol('KNEX_CONNECTION');
 
+@Global()
 @Module({
     providers: [
         {
