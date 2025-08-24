@@ -9,4 +9,9 @@ export class UsersController {
     findAll() {
         return this.usersService.findAll();
     }
+
+    @Post('/create')
+    create(@Body body: any) {
+        return this.usersService.create(body);
+    }
 }
