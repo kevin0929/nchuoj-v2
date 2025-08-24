@@ -8,4 +8,8 @@ export class UsersService {
     async findAll() {
         return this.knex('users').select('*');
     }
+
+    async create(user: any) {
+        return this.knex('users').insert(user);
+    }
 }
