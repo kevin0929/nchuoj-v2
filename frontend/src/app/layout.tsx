@@ -1,4 +1,4 @@
-import UserHeader from "@/components/user/UserHeader";
+import { MantineProvider } from "@mantine/core";
 import "./globals.css";
 
 
@@ -10,8 +10,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <UserHeader />
-        {children}
+        <MantineProvider>
+          {children}
+        </MantineProvider>
+        
       </body>
     </html>
   );
